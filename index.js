@@ -8,3 +8,7 @@ let port = 3000;
 app.listen(3000, () => {
   console.log(`The port is running on ${3000}`);
 });
+
+app.use((req, res) => {
+  console.log("Request Recived");
+});
