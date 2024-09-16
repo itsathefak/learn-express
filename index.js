@@ -11,4 +11,8 @@ app.listen(3000, () => {
 
 app.use((req, res) => {
   console.log("Request Recived");
+  res.send({
+    name: "Apple",
+    color: "red",
+  });
 });
