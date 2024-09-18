@@ -9,20 +9,10 @@ app.listen(3000, () => {
   console.log(`The port is running on ${3000}`);
 });
 
-app.get("/", (req, res) => {
-  res.send("you sent a res to root path");
-});
-
-app.get("/bmw", (req, res) => {
-  res.send("you sent a res to bmw");
-});
-
-app.get("/audi", (req, res) => {
-  res.send("you sent a res to audi");
-});
-
-app.get("*", (req, res) => {
-  res.send("wrong path");
+app.get("/:username/:id", (req, res) => {
+  let { username, id } = req.params;
+  let htmlstr = `<h1>Welcome to the page of @${username}.</h1>`;
+  res.send(htmlstr);
 });
 
 // app.use((req, res) => {
